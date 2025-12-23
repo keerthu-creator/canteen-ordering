@@ -3,176 +3,173 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>College Canteen Online Ordering</title>
+<title>College Canteen</title>
 
 <style>
-:root {
-  --red: #e63946;
-  --yellow: #fcbf49;
-  --green: #2a9d8f;
-  --dark: #1d3557;
-  --light: #f1faee;
+:root{
+  --bg:#0f0f0f;
+  --card:#1c1c1c;
+  --accent:#ff9f1c;
+  --green:#2ec4b6;
+  --text:#f1f1f1;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-body {
-  background: var(--light);
-  color: var(--dark);
+body{
+  background:var(--bg);
+  color:var(--text);
 }
 
-/* HEADER */
-header {
-  background: linear-gradient(135deg, var(--red), var(--yellow));
-  color: white;
-  text-align: center;
-  padding: 1.5rem;
+header{
+  background:linear-gradient(135deg,#ff4d4d,#ff9f1c);
+  padding:1.5rem;
+  text-align:center;
 }
 
-/* SECTIONS */
-section {
-  padding: 1.5rem;
+header h1{
+  font-size:1.6rem;
 }
 
-.section-title {
-  text-align: center;
-  color: var(--green);
-  margin-bottom: 1rem;
+header p{
+  font-size:0.95rem;
+  opacity:0.9;
 }
 
-/* INFO BOX */
-.info-box {
-  background: white;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-  margin-bottom: 1.5rem;
-  animation: fadeUp 0.8s ease;
+/* sections */
+section{
+  padding:1.5rem;
 }
 
-/* MENU */
-.menu-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+.section-title{
+  color:var(--accent);
+  margin-bottom:1rem;
+  text-align:center;
+  font-size:1.4rem;
 }
 
-.menu-item {
-  background: white;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  transition: transform 0.3s;
+/* timing */
+.time-box{
+  background:var(--card);
+  padding:1rem;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 0 15px rgba(0,0,0,0.6);
 }
 
-.menu-item:hover {
-  transform: scale(1.03);
+/* menu */
+.menu-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1rem;
 }
 
-.menu-item img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
+.menu-item{
+  background:var(--card);
+  border-radius:14px;
+  overflow:hidden;
+  transition:transform 0.3s;
 }
 
-.menu-content {
-  padding: 1rem;
+.menu-item:hover{
+  transform:scale(1.03);
 }
 
-.price {
-  color: var(--green);
-  font-weight: bold;
+.menu-item img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
 }
 
-/* FORM */
-form {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+.menu-content{
+  padding:0.8rem;
 }
 
-input, select, button {
-  width: 100%;
-  padding: 0.7rem;
-  margin-top: 0.7rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+.menu-content h3{
+  font-size:1.05rem;
 }
 
-button {
-  background: var(--green);
-  color: white;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
+.menu-content p{
+  font-size:0.85rem;
+  opacity:0.8;
 }
 
-button:hover {
-  background: #1f7a6b;
+.price{
+  color:var(--green);
+  font-weight:bold;
 }
 
-/* POPUP MODAL */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  align-items: center;
-  justify-content: center;
+/* form */
+form{
+  background:var(--card);
+  padding:1.5rem;
+  border-radius:14px;
 }
 
-.modal-content {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  text-align: center;
-  width: 90%;
-  max-width: 350px;
-  animation: pop 0.4s ease;
+input,select,button{
+  width:100%;
+  padding:0.7rem;
+  margin-top:0.7rem;
+  border-radius:8px;
+  border:none;
+  font-size:1rem;
 }
 
-.modal-content h2 {
-  color: var(--green);
+input,select{
+  background:#2a2a2a;
+  color:white;
 }
 
-.close-btn {
-  margin-top: 1rem;
-  background: var(--red);
+button{
+  background:var(--accent);
+  font-weight:bold;
+  cursor:pointer;
 }
 
-/* FOOTER */
-footer {
-  background: var(--dark);
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.85rem;
+button:hover{
+  opacity:0.9;
 }
 
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* popup */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  display:none;
+  justify-content:center;
+  align-items:center;
 }
 
-@keyframes pop {
-  from { transform: scale(0.6); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+.modal-box{
+  background:var(--card);
+  padding:2rem;
+  border-radius:16px;
+  text-align:center;
+  width:90%;
+  max-width:320px;
+  animation:pop 0.4s ease;
 }
 
-/* DESKTOP */
-@media(min-width: 768px) {
-  .menu-grid {
-    grid-template-columns: repeat(3, 1fr);
+@keyframes pop{
+  from{transform:scale(0.6);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+footer{
+  text-align:center;
+  padding:1rem;
+  font-size:0.8rem;
+  opacity:0.7;
+}
+
+@media(min-width:768px){
+  .menu-grid{
+    grid-template-columns:repeat(3,1fr);
   }
 }
 </style>
@@ -181,114 +178,169 @@ footer {
 <body>
 
 <header>
-  <h1>🎓 College Canteen Online Ordering</h1>
-  <p>Order food • Skip queues • Save time</p>
+  <h1>🍴 College Canteen</h1>
+  <p>Order fast • Eat fresh • No queues</p>
 </header>
 
 <section>
-  <div class="info-box">
-    <h2 class="section-title">Why This System?</h2>
-    <p>
-      Students can pre-order food using their phone and collect it using a token.
-      This reduces crowd, saves time, and improves canteen efficiency.
-    </p>
-  </div>
-
-  <div class="info-box">
-    <h2 class="section-title">Canteen Timings</h2>
-    <p>🕘 9:00 AM – 11:30 AM</p>
-    <p>🕛 12:30 PM – 3:30 PM</p>
-    <p>🕖 4:30 PM – 7:00 PM</p>
+  <h2 class="section-title">⏰ Canteen Timings</h2>
+  <div class="time-box">
+    <p>Morning: 9:00 – 11:30</p>
+    <p>Afternoon: 12:30 – 3:30</p>
+    <p>Evening: 4:30 – 7:00</p>
   </div>
 </section>
 
 <section>
-  <h2 class="section-title">Today's Menu</h2>
+  <h2 class="section-title">🍽️ Today’s Menu</h2>
 
   <div class="menu-grid">
+
+    <!-- Breakfast -->
     <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1604908554166-68e4c9bfe0ff" alt="Sandwich">
+      <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7">
       <div class="menu-content">
-        <h3>Veg Sandwich</h3>
-        <p>Fresh vegetables & butter bread</p>
-        <p class="price">₹40</p>
+        <h3>Idli / Dosa</h3>
+        <p>Chutney & Sambar free</p>
+        <p class="price">₹30</p>
       </div>
     </div>
 
     <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1625398407796-82650a8c135f" alt="Samosa">
+      <img src="https://images.unsplash.com/photo-1626509653291-5b98d0f92c50">
       <div class="menu-content">
-        <h3>Samosa</h3>
-        <p>Hot and crispy</p>
+        <h3>Parotta</h3>
+        <p>Soft & hot</p>
         <p class="price">₹15</p>
       </div>
     </div>
 
     <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b" alt="Fried Rice">
+      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950">
       <div class="menu-content">
-        <h3>Veg Fried Rice</h3>
-        <p>Served hot with sauce</p>
-        <p class="price">₹60</p>
+        <h3>Poori with Masala</h3>
+        <p>Classic combo</p>
+        <p class="price">₹40</p>
       </div>
     </div>
+
+    <!-- Lunch -->
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec">
+      <div class="menu-content">
+        <h3>Kuska</h3>
+        <p>Simple & tasty</p>
+        <p class="price">₹70</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1604908177522-937b1e8e98b5">
+      <div class="menu-content">
+        <h3>Chicken Fried Rice</h3>
+        <p>Best seller 🔥</p>
+        <p class="price">₹120</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b">
+      <div class="menu-content">
+        <h3>Chicken Noodles</h3>
+        <p>Street style</p>
+        <p class="price">₹120</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1608032077018-c9d8bfe52a50">
+      <div class="menu-content">
+        <h3>Kothu Parotta</h3>
+        <p>Spicy & filling</p>
+        <p class="price">₹100</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1604909053198-7c7c49c3f2ef">
+      <div class="menu-content">
+        <h3>Omelette</h3>
+        <p>Quick protein</p>
+        <p class="price">₹25</p>
+      </div>
+    </div>
+
+    <!-- Snacks -->
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1625398407796-82650a8c135f">
+      <div class="menu-content">
+        <h3>Samosa / Pakoda / Vada</h3>
+        <p>Evening snacks</p>
+        <p class="price">₹15</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1599785209798-07fcbcfb8a6d">
+      <div class="menu-content">
+        <h3>Buns & Chips</h3>
+        <p>Cream, Jam, Lays</p>
+        <p class="price">₹20</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <section>
-  <h2 class="section-title">Order Now</h2>
+  <h2 class="section-title">📱 Order Here</h2>
 
   <form id="orderForm">
-    <input type="text" id="name" placeholder="Student Name" required>
-    <input type="tel" id="phone" placeholder="Phone Number" required>
-
-    <select id="item" required>
-      <option value="">Select Food Item</option>
-      <option>Veg Sandwich</option>
-      <option>Samosa</option>
-      <option>Veg Fried Rice</option>
+    <input type="text" placeholder="Your Name" required>
+    <input type="tel" placeholder="Phone Number" required>
+    <select required>
+      <option value="">Select Item</option>
+      <option>Idli / Dosa</option>
+      <option>Parotta</option>
+      <option>Poori Masala</option>
+      <option>Kuska</option>
+      <option>Chicken Fried Rice</option>
+      <option>Chicken Noodles</option>
+      <option>Kothu Parotta</option>
+      <option>Omelette</option>
+      <option>Snacks</option>
     </select>
-
-    <input type="number" id="qty" placeholder="Quantity" min="1" max="5" required>
-
+    <input type="number" min="1" max="5" placeholder="Quantity" required>
     <button type="submit">Place Order</button>
   </form>
 </section>
 
 <footer>
-  © 2025 College Canteen | Smart Ordering System
+  Made for students ❤️ College Canteen
 </footer>
 
-<!-- POPUP -->
 <div class="modal" id="popup">
-  <div class="modal-content">
+  <div class="modal-box">
     <h2>🎉 Order Placed!</h2>
-    <p id="tokenText"></p>
-    <button class="close-btn" onclick="closePopup()">Close</button>
+    <p id="token"></p>
+    <button onclick="closePop()">Close</button>
   </div>
 </div>
 
 <script>
-const form = document.getElementById("orderForm");
-const popup = document.getElementById("popup");
-const tokenText = document.getElementById("tokenText");
+const form=document.getElementById("orderForm");
+const popup=document.getElementById("popup");
+const tokenText=document.getElementById("token");
 
-form.addEventListener("submit", function(e) {
+form.addEventListener("submit",e=>{
   e.preventDefault();
-
-  const token = Math.floor(1000 + Math.random() * 9000);
-  tokenText.innerHTML = `
-    Your order has been placed successfully.<br><br>
-    <strong>Token Number:</strong> ${token}<br>
-    Show this token at the counter.
-  `;
-
-  popup.style.display = "flex";
+  tokenText.innerHTML="Your token number: <b>"+Math.floor(1000+Math.random()*9000)+"</b>";
+  popup.style.display="flex";
   form.reset();
 });
 
-function closePopup() {
-  popup.style.display = "none";
+function closePop(){
+  popup.style.display="none";
 }
 </script>
 
