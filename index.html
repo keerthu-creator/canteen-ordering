@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Canteen Online Ordering</title>
+
+<style>
+:root {
+  --red: #e63946;
+  --yellow: #fcbf49;
+  --green: #2a9d8f;
+  --dark: #1d3557;
+  --light: #f1faee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--dark);
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, var(--red), var(--yellow));
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* SECTIONS */
+section {
+  padding: 1.5rem;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--green);
+  margin-bottom: 1rem;
+}
+
+/* INFO BOX */
+.info-box {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.8s ease;
+}
+
+/* MENU */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.menu-item {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+
+.menu-item:hover {
+  transform: scale(1.03);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.menu-content {
+  padding: 1rem;
+}
+
+.price {
+  color: var(--green);
+  font-weight: bold;
+}
+
+/* FORM */
+form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+input, select, button {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: var(--green);
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1f7a6b;
+}
+
+/* POPUP MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  width: 90%;
+  max-width: 350px;
+  animation: pop 0.4s ease;
+}
+
+.modal-content h2 {
+  color: var(--green);
+}
+
+.close-btn {
+  margin-top: 1rem;
+  background: var(--red);
+}
+
+/* FOOTER */
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* DESKTOP */
+@media(min-width: 768px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎓 College Canteen Online Ordering</h1>
+  <p>Order food • Skip queues • Save time</p>
+</header>
+
+<section>
+  <div class="info-box">
+    <h2 class="section-title">Why This System?</h2>
+    <p>
+      Students can pre-order food using their phone and collect it using a token.
+      This reduces crowd, saves time, and improves canteen efficiency.
+    </p>
+  </div>
+
+  <div class="info-box">
+    <h2 class="section-title">Canteen Timings</h2>
+    <p>🕘 9:00 AM – 11:30 AM</p>
+    <p>🕛 12:30 PM – 3:30 PM</p>
+    <p>🕖 4:30 PM – 7:00 PM</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Today's Menu</h2>
+
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1604908554166-68e4c9bfe0ff" alt="Sandwich">
+      <div class="menu-content">
+        <h3>Veg Sandwich</h3>
+        <p>Fresh vegetables & butter bread</p>
+        <p class="price">₹40</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1625398407796-82650a8c135f" alt="Samosa">
+      <div class="menu-content">
+        <h3>Samosa</h3>
+        <p>Hot and crispy</p>
+        <p class="price">₹15</p>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b" alt="Fried Rice">
+      <div class="menu-content">
+        <h3>Veg Fried Rice</h3>
+        <p>Served hot with sauce</p>
+        <p class="price">₹60</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Order Now</h2>
+
+  <form id="orderForm">
+    <input type="text" id="name" placeholder="Student Name" required>
+    <input type="tel" id="phone" placeholder="Phone Number" required>
+
+    <select id="item" required>
+      <option value="">Select Food Item</option>
+      <option>Veg Sandwich</option>
+      <option>Samosa</option>
+      <option>Veg Fried Rice</option>
+    </select>
+
+    <input type="number" id="qty" placeholder="Quantity" min="1" max="5" required>
+
+    <button type="submit">Place Order</button>
+  </form>
+</section>
+
+<footer>
+  © 2025 College Canteen | Smart Ordering System
+</footer>
+
+<!-- POPUP -->
+<div class="modal" id="popup">
+  <div class="modal-content">
+    <h2>🎉 Order Placed!</h2>
+    <p id="tokenText"></p>
+    <button class="close-btn" onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+<script>
+const form = document.getElementById("orderForm");
+const popup = document.getElementById("popup");
+const tokenText = document.getElementById("tokenText");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const token = Math.floor(1000 + Math.random() * 9000);
+  tokenText.innerHTML = `
+    Your order has been placed successfully.<br><br>
+    <strong>Token Number:</strong> ${token}<br>
+    Show this token at the counter.
+  `;
+
+  popup.style.display = "flex";
+  form.reset();
+});
+
+function closePopup() {
+  popup.style.display = "none";
+}
+</script>
+
+</body>
+</html>
